@@ -1,0 +1,6 @@
+@FeedbackService.UsersInfo_HostAddress = http://localhost:5219
+
+GET {{FeedbackService.UsersInfo_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
