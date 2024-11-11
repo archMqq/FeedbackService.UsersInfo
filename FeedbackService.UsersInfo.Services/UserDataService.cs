@@ -54,9 +54,9 @@ namespace FeedbackService.UsersInfo.Services
             }
         }
 
-        public async Task<ServiceResult<bool>> UpdateUserInfo(int id, string? newName, string? newSurname, int? businessId)
+        public async Task<ServiceResult<bool>> UpdateUserInfo(User _user)
         {
-            var user = await _context.FindAsync<User>(id);
+            var user = await _context.FindAsync<User>(_user.Id);
             if (user == null)
                 return new ServiceResult<bool>
                 {
@@ -68,12 +68,7 @@ namespace FeedbackService.UsersInfo.Services
                     }
                 };
 
-            if (newName !=  null) 
-                user.Name = newName;
-            if (newSurname != null)
-                user.Surname = newSurname;
-            if (businessId != null)
-                user.BusinessId = businessId;
+            user = _user;
 
             try
             {

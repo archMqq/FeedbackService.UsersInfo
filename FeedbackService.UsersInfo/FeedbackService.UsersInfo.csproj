@@ -22,4 +22,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+	<ItemGroup>
+		<ProjectReference Include="..\FeedbackService.UserInfo.UserInfoModels\FeedbackService.UserInfo.UserInfoModels.csproj" />
+		<ProjectReference Include="..\FeedbackService.UsersInfo.Services\FeedbackService.UsersInfo.Services.csproj" />
+	</ItemGroup>
+
 </Project>
