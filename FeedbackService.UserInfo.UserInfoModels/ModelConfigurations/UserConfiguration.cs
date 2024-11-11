@@ -15,6 +15,10 @@ namespace FeedbackService.UserInfo.UserInfoModels.ModelConfigurations
         {
             builder.ToTable("users");
             builder.HasKey(t => t.Id);
+            builder.Property(t => t.Name).IsRequired();
+            builder.Property(t => t.Surname).IsRequired();
+            builder.Property(t => t.Email).IsRequired();
+
         }
     }
 }

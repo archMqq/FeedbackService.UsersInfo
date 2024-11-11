@@ -13,5 +13,6 @@ namespace FeedbackService.UserInfo.BusinessInfo.Models
         public string Description { get; set; }
         public int CategoryTypeId { get; set; }
 
+        public List<UserAnalysisCategory> UserAnalysisCategories { get; set; }
     }
 }

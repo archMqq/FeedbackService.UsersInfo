@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeedbackService.UsersInfo.S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeedbackService.ServiceResult", "..\FeedbackService.ServiceResult\FeedbackService.ServiceResult\FeedbackService.ServiceResult.csproj", "{5AF85B97-6A78-4379-99A8-8C32DDD74C8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeedbackService.UserInfo.BusinessModels", "FeedbackService.UserInfo.BusinessModels\FeedbackService.UserInfo.BusinessModels.csproj", "{5075D24A-A3A7-4840-B822-2B4CCB267372}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeedbackService.UserInfo.BusinessInfo", "FeedbackService.UserInfo.BusinessInfo\FeedbackService.UserInfo.BusinessInfo.csproj", "{ECCA4510-599C-4803-AAB7-7E22DE603E23}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{5AF85B97-6A78-4379-99A8-8C32DDD74C8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AF85B97-6A78-4379-99A8-8C32DDD74C8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AF85B97-6A78-4379-99A8-8C32DDD74C8F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5075D24A-A3A7-4840-B822-2B4CCB267372}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5075D24A-A3A7-4840-B822-2B4CCB267372}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5075D24A-A3A7-4840-B822-2B4CCB267372}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5075D24A-A3A7-4840-B822-2B4CCB267372}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECCA4510-599C-4803-AAB7-7E22DE603E23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECCA4510-599C-4803-AAB7-7E22DE603E23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECCA4510-599C-4803-AAB7-7E22DE603E23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECCA4510-599C-4803-AAB7-7E22DE603E23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

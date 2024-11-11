@@ -15,7 +15,9 @@ namespace FeedbackService.UserInfo.UserInfoModels.ModelConfigurations
         {
             builder.ToTable("analysis_result");
             builder.HasAlternateKey(x => new {x.UserId, x.RequestId});
-            builder.Property(x => x.AssesmentCategories).HasColumnType("jsonb");
+            builder.Property(x => x.AssesmentCategories).HasColumnType("jsonb").IsRequired();
+            builder.Property(x => x.Recomendation).IsRequired();
+
         }
     }
 }
