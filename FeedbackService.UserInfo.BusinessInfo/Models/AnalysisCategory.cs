@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FeedbackService.UserInfo.BusinessModels
+namespace FeedbackService.UserInfo.BusinessInfo.Models
 {
     public class AnalysisCategory
     {
