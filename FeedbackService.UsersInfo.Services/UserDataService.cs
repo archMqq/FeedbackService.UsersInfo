@@ -105,5 +105,57 @@ namespace FeedbackService.UsersInfo.Services
             }
         }
 
+        public async Task<ServiceResult<bool>> SetBusinessId(int userId, int businessId)
+        {
+            var user = await _context.FindAsync<User>(userId);
+            if (user == null)
+            {
+                return new ServiceResult<bool>
+                {
+                    NotFound = true,
+                    Errors = new ServiceErrors
+                    {
+                        Fields = new[] { userId.ToString() },
+                        Error = "Пользователя с указанным id не существует"
+                    }
+                };
+            }
+            user.BusinessId = businessId;
+            try
+            {
+                _context.SaveChanges();
+
+                return new ServiceResult<bool>
+                {
+                    Result = true
+                };
+            }
+            catch (DBConcurrencyException ex)
+            {
+                _logger.LogError($"Ошибка при изменении businessId пользователя в БД с текстом: {ex.Message}");
+                return new ServiceResult<bool>
+                {
+                    InternalServerError = true,
+                    Errors = new ServiceErrors
+                    {
+                        Error = "Ошибка при изменении данных пользователя в БД"
+                    }
+                };
+            }
+            catch (OperationCanceledException ex)
+            {
+                _logger.LogError($"Операция изменения businessId была отменена с текстом: {ex.Message}");
+                return new ServiceResult<bool>
+                {
+                    InternalServerError = true,
+                    Errors = new ServiceErrors
+                    {
+                        Error = "Операция изменения была отменена"
+                    }
+                };
+            }
+
+        }
+
     }
 }

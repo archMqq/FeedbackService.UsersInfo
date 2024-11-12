@@ -36,7 +36,7 @@ namespace FeedbackService.UsersInfo.Services
             }
             catch (DBConcurrencyException ex) 
             {
-                _logger.Log(LogLevel.Error, $"Ошибка при сохранении информации о бизнесе с тектом: {ex.Message}");
+                _logger.LogError($"Ошибка при сохранении информации о бизнесе с тектом: {ex.Message}");
                 return new ServiceResult<int>
                 {
                     InternalServerError = true,
@@ -48,7 +48,7 @@ namespace FeedbackService.UsersInfo.Services
             }
             catch (DbUpdateException ex) 
             {
-                _logger.Log(LogLevel.Error, $"Ошибка обновления информации о бизнесе с тектом: {ex.Message}");
+                _logger.LogError($"Ошибка обновления информации о бизнесе с тектом: {ex.Message}");
                 return new ServiceResult<int>
                 {
                     InternalServerError = true,
@@ -58,9 +58,21 @@ namespace FeedbackService.UsersInfo.Services
                     }
                 };
             }
+            catch (OperationCanceledException ex)
+            {
+                _logger.LogError($"Операция сохранения бизнеса была отменена с текстом: {ex.Message}");
+                return new ServiceResult<int>
+                {
+                    InternalServerError = true,
+                    Errors = new ServiceErrors
+                    {
+                        Error = "Операция изменения была отменена"
+                    }
+                };
+            }
             catch (Exception ex) 
             {
-                _logger.Log(LogLevel.Error, $"Неизвестная ошибка при сохранении информации о бизнесе с тектом: {ex.Message}");
+                _logger.LogError($"Неизвестная ошибка при сохранении информации о бизнесе с тектом: {ex.Message}");
                 return new ServiceResult<int>
                 {
                     InternalServerError = true,
