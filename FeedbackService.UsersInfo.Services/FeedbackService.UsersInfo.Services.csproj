@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\FeedbackService.ServiceResult\FeedbackService.ServiceResult\FeedbackService.ServiceResult.csproj" />
+    <ProjectReference Include="..\FeedbackService.UserInfo.BusinessInfo\FeedbackService.UserInfo.BusinessInfo.csproj" />
     <ProjectReference Include="..\FeedbackService.UserInfo.UserInfoModels\FeedbackService.UserInfo.UserInfoModels.csproj" />
   </ItemGroup>
 
