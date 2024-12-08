@@ -9,7 +9,8 @@ namespace FeedbackService.UserInfo.UserInfoModels.Models
     public class AnalysRequest
     {
         public int Id { get; set; }
-        public int UserId { get; set; }
-        public DateTime DateOfRequest { get; set; }
+        public int UserId {  get; set; }
+        public bool IsBusinessAnalys { get; set; }
+        public int AnalysedObjectId { get; set; }
     }
 }

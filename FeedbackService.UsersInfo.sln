@@ -5,7 +5,7 @@ VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeedbackService.UsersInfo", "FeedbackService.UsersInfo\FeedbackService.UsersInfo.csproj", "{F7BFB2EF-A9F5-43F9-A039-EB50631EB40A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeedbackService.UserInfo.UserInfoModels", "FeedbackService.UserInfo.UserInfoModels\FeedbackService.UserInfo.UserInfoModels.csproj", "{A78FFFC4-D39D-4FE4-A8F6-C6C4A7C39F8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeedbackService.UserInfo.UserProfileModels", "FeedbackService.UserInfo.UserInfoModels\FeedbackService.UserInfo.UserProfileModels.csproj", "{A78FFFC4-D39D-4FE4-A8F6-C6C4A7C39F8D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeedbackService.UsersInfo.Services", "FeedbackService.UsersInfo.Services\FeedbackService.UsersInfo.Services.csproj", "{79FF4167-6668-4748-A7BF-C830336F0167}"
 EndProject

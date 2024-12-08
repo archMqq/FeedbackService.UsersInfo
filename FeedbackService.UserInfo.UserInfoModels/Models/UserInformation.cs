@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FeedbackService.UserInfo.UserInfoModels.Models
 {
-    public class User
+    public class UserInformation
     {
         public int Id { get; set; }
         public string Name { get; set; }

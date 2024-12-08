@@ -15,14 +15,17 @@ namespace FeedbackService.UserInfo.UserInfoModels.RequestResModels
         public string Id { get; set; }
         [JsonPropertyName("user_id")]
         public string UserId { get; set; }
-        [JsonPropertyName("date_of_request")]
-        public string DateOfRequest { get; set; }
+        [JsonPropertyName("is_business_analys")]
+        public string IsBusinessAnalys { get; set; }
+        [JsonPropertyName("analysed_object_id")]
+        public string AnalysedObjectId { get; set; }
 
         public OutputAnalysRequest(AnalysRequest request)
         {
             Id = request.Id.ToString();
             UserId = request.UserId.ToString();
-            DateOfRequest = request.DateOfRequest.ToShortDateString();
+            IsBusinessAnalys = request.IsBusinessAnalys.ToString();
+            AnalysedObjectId = request.AnalysedObjectId.ToString();
         }
     }
 }

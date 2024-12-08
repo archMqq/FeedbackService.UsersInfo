@@ -1,8 +1,9 @@
 ﻿using System.Text.Json.Serialization;
 using FeedbackService.UserInfo.UserInfoModels.Models;
+
 namespace FeedbackService.UserInfo.UserInfoModels.RequestResModels
 {
-    public class OutputUser
+    public class OutputUserInformation
     {
         [JsonPropertyName("id")]
         public string Id { get; set; }
@@ -15,7 +16,7 @@ namespace FeedbackService.UserInfo.UserInfoModels.RequestResModels
         [JsonPropertyName("busindess_id")]
         public string BusinessId { get; set; }
 
-        public OutputUser(User user)
+        public OutputUserInformation(UserInformation user)
         {
             Id = user.Id.ToString();
             Name = user.Name;

@@ -11,7 +11,6 @@ namespace FeedbackService.UserInfo.UserInfoModels.Models
         public int UserId { get; set; }
         public int RequestId { get; set; }
         public string Recomendation { get; set; }
-        public CategoriesDictionary AssesmentCategories { get; set; }
-
+        public CategoriesDictionary RatingByCategories { get; set; }
     }
 }

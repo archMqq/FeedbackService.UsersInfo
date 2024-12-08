@@ -16,15 +16,15 @@ namespace FeedbackService.UserInfo.UserInfoModels.RequestResModels
         public string RequestId { get; set; }
         [JsonPropertyName("recomendation")]
         public string Recomendation { get; set; }
-        [JsonPropertyName("assesment_categories")]
-        public string AssesmentCategories { get; set; }
+        [JsonPropertyName("rating_by_categories")]
+        public string RatingByCatehories { get; set; }
 
         public OutputAnalysisResult(AnalysisResult result)
         {
             UserId = result.UserId.ToString();
             RequestId = result.RequestId.ToString();
             Recomendation = result.Recomendation;
-            AssesmentCategories = result.AssesmentCategories.ToString();
+            RatingByCatehories = result.RatingByCategories.ToString();
         }
     }
 }

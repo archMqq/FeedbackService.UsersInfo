@@ -15,8 +15,9 @@ namespace FeedbackService.UserInfo.UserInfoModels.ModelConfigurations
         {
             builder.ToTable("requests");
             builder.HasKey(x => x.Id);
-            builder.HasOne<User>().WithMany().HasForeignKey(x => x.UserId).OnDelete(DeleteBehavior.Cascade);
-            builder.Property(x =>x.DateOfRequest).IsRequired();
+            builder.HasOne<UserInformation>().WithMany().HasForeignKey(x => x.UserId).OnDelete(DeleteBehavior.Cascade);
+            builder.Property(x =>x.IsBusinessAnalys).IsRequired();
+            builder.Property(x => x.AnalysedObjectId).IsRequired();
         }
     }
 }

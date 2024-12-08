@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace FeedbackService.UserInfo.UserInfoModels.ModelConfigurations
 {
-    public class UserConfiguration : IEntityTypeConfiguration<User>
+    public class UserConfiguration : IEntityTypeConfiguration<UserInformation>
     {
-        public void Configure(EntityTypeBuilder<User> builder)
+        public void Configure(EntityTypeBuilder<UserInformation> builder)
         {
             builder.ToTable("users");
             builder.HasKey(t => t.Id);
