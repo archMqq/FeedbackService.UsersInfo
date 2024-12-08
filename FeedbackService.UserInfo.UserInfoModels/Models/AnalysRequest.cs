@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FeedbackService.UserInfo.UserInfoModels.Models
+namespace FeedbackService.UserInfo.UserProfileModels.Models
 {
     public class AnalysRequest
     {

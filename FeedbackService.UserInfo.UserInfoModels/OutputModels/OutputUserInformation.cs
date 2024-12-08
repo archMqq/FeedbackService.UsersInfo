@@ -1,7 +1,7 @@
 ﻿using System.Text.Json.Serialization;
-using FeedbackService.UserInfo.UserInfoModels.Models;
+using FeedbackService.UserInfo.UserProfileModels.Models;
 
-namespace FeedbackService.UserInfo.UserInfoModels.RequestResModels
+namespace FeedbackService.UserInfo.UserProfileModels.RequestResModels
 {
     public class OutputUserInformation
     {

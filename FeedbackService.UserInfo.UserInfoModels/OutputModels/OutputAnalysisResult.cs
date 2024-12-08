@@ -1,4 +1,4 @@
-﻿using FeedbackService.UserInfo.UserInfoModels.Models;
+﻿using FeedbackService.UserInfo.UserProfileModels.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace FeedbackService.UserInfo.UserInfoModels.RequestResModels
+namespace FeedbackService.UserInfo.UserProfileModels.RequestResModels
 {
     public class OutputAnalysisResult
     {

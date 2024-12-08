@@ -1,7 +1,7 @@
 ﻿using FeedbackService.ServiceResult;
-using FeedbackService.UserInfo.UserInfoModels;
-using FeedbackService.UserInfo.UserInfoModels.Models;
-using FeedbackService.UserInfo.UserInfoModels.RequestResModels;
+using FeedbackService.UserInfo.UserProfileModels;
+using FeedbackService.UserInfo.UserProfileModels.Models;
+using FeedbackService.UserInfo.UserProfileModels.RequestResModels;
 using Microsoft.Extensions.Logging;
 using System.Data;
 
@@ -16,11 +16,11 @@ namespace FeedbackService.UsersInfo.Services
             _context = context;
             _logger = logger;
         }
-        public async Task<ServiceResult<int>> SaveUserDefaultData(User user)
+        public async Task<ServiceResult<int>> SaveUserDefaultData(UserInformation user)
         {
             try
             {
-                await _context.AddAsync<User>(user);
+                await _context.AddAsync<UserInformation>(user);
                 await _context.SaveChangesAsync();
 
                 return new ServiceResult<int>
@@ -54,9 +54,9 @@ namespace FeedbackService.UsersInfo.Services
             }
         }
 
-        public async Task<ServiceResult<bool>> UpdateUserInfo(User _user)
+        public async Task<ServiceResult<bool>> UpdateUserInfo(UserInformation _user)
         {
-            var user = await _context.FindAsync<User>(_user.Id);
+            var user = await _context.FindAsync<UserInformation>(_user.Id);
             if (user == null)
                 return new ServiceResult<bool>
                 {
@@ -107,7 +107,7 @@ namespace FeedbackService.UsersInfo.Services
 
         public async Task<ServiceResult<bool>> SetBusinessId(int userId, int businessId)
         {
-            var user = await _context.FindAsync<User>(userId);
+            var user = await _context.FindAsync<UserInformation>(userId);
             if (user == null)
             {
                 return new ServiceResult<bool>

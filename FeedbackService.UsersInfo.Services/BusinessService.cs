@@ -22,11 +22,11 @@ namespace FeedbackService.UsersInfo.Services
             _logger = logger;
         }
 
-        public async Task<ServiceResult<int>> SetBusiness(UserBusiness userBusiness, int userId)
+        public async Task<ServiceResult<int>> SetBusiness(Business userBusiness, int userId)
         {
             try
             {
-                await _context.AddAsync<UserBusiness>(userBusiness);
+                await _context.AddAsync<Business>(userBusiness);
                 await _context.SaveChangesAsync();
 
                 return new ServiceResult<int>
@@ -84,9 +84,9 @@ namespace FeedbackService.UsersInfo.Services
             }
         }
 
-        public async Task<ServiceResult<bool>> UpdateBusinessInfo(UserBusiness userBusiness)
+        public async Task<ServiceResult<bool>> UpdateBusinessInfo(Business userBusiness)
         {
-            UserBusiness? userBusinessDB = await _context.FindAsync<UserBusiness>(userBusiness.Id);
+            Business? userBusinessDB = await _context.FindAsync<Business>(userBusiness.Id);
             if (userBusinessDB == null)
             {
                 return new ServiceResult<bool>

@@ -1,4 +1,5 @@
 ﻿using FeedbackService.UserInfo.BusinessInfo.Models;
+using FeedbackService.UserInfo.BusinessModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
@@ -9,13 +10,13 @@ using System.Threading.Tasks;
 
 namespace FeedbackService.UserInfo.BusinessInfo.ModelConfigurations
 {
-    public class AnalysisCategoryConfiguration : IEntityTypeConfiguration<AnalysisCategory>
+    public class BusinessConfiguration : IEntityTypeConfiguration<Business>
     {
-        public void Configure(EntityTypeBuilder<AnalysisCategory> builder)
+        public void Configure(EntityTypeBuilder<Business> builder)
         {
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Name).IsRequired();
-            builder.HasOne<AnalysisCategoryType>().WithMany().HasForeignKey(x => x.CategoryTypeId).OnDelete(DeleteBehavior.Cascade);
+            builder.Property(x => x.BusinessTypeId).IsRequired();
         }
     }
 }

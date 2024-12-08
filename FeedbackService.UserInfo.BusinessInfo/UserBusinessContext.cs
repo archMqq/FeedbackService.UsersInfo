@@ -1,4 +1,6 @@
 ﻿using FeedbackService.UserInfo.BusinessInfo.ModelConfigurations;
+using FeedbackService.UserInfo.BusinessInfo.Models;
+using FeedbackService.UserInfo.BusinessModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using System;
@@ -20,13 +22,13 @@ namespace FeedbackService.UserInfo.BusinessInfo
         {
             Database.EnsureCreated();
         }
+        DbSet<Business> Businesses { get; set; }
+        DbSet<BusinessType> BusinessTypes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new UserAnalysisCategoryConfiguration());
-            modelBuilder.ApplyConfiguration(new UserBusinessConfiguration());
-            modelBuilder.ApplyConfiguration(new AnalysisCategoryConfiguration());
-            modelBuilder.ApplyConfiguration(new AnalysisCategoryTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new BusinessConfiguration());
+            modelBuilder.ApplyConfiguration(new BusinessTypeConfiguration());
         }
     }
 }

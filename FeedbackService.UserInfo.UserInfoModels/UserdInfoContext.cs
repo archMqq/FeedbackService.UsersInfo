@@ -1,5 +1,5 @@
-﻿using FeedbackService.UserInfo.UserInfoModels.ModelConfigurations;
-using FeedbackService.UserInfo.UserInfoModels.Models;
+﻿using FeedbackService.UserInfo.UserProfileModels.ModelConfigurations;
+using FeedbackService.UserInfo.UserProfileModels.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FeedbackService.UserInfo.UserInfoModels
+namespace FeedbackService.UserInfo.UserProfileModels
 {
     public class UserdInfoContext : DbContext
     {
@@ -21,7 +21,7 @@ namespace FeedbackService.UserInfo.UserInfoModels
             Database.EnsureCreated();
         }
 
-        DbSet<User> Users { get; set; }
+        DbSet<UserInformation> Users { get; set; }
         DbSet<AnalysRequest> Requests { get; set; }
         DbSet<AnalysisResult> analysisResults { get; set; }
 

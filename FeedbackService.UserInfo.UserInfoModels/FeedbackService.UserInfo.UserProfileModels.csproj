@@ -4,6 +4,9 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <PackageId>FeedbackService.UserInfo.UserProfileModels</PackageId>
+    <Authors>FeedbackService.UserInfo.UserProfileModels</Authors>
+    <Product>FeedbackService.UserInfo.UserProfileModels</Product>
   </PropertyGroup>
 
   <ItemGroup>
