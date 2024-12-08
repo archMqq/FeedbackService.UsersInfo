@@ -83,5 +83,81 @@ namespace FeedbackService.UsersInfo.Services
                 };
             }
         }
+
+        public async Task<ServiceResult<bool>> UpdateBusinessInfo(UserBusiness userBusiness)
+        {
+            UserBusiness? userBusinessDB = await _context.FindAsync<UserBusiness>(userBusiness.Id);
+            if (userBusinessDB == null)
+            {
+                return new ServiceResult<bool>
+                {
+                    NotFound = true,
+                    Errors = new ServiceErrors()
+                    {
+                        Error = "Такой записи не существует."
+                    }
+
+                };
+            }
+
+            userBusinessDB = userBusiness;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+                return new ServiceResult<bool>
+                {
+                    Result = true
+                };
+            }
+            catch (DBConcurrencyException ex)
+            {
+                _logger.LogError($"Ошибка при обновлении информации о бизнесе с тектом: {ex.Message}");
+                return new ServiceResult<bool>
+                {
+                    InternalServerError = true,
+                    Errors = new ServiceErrors()
+                    {
+                        Error = ex.Message
+                    }
+                };
+            }
+            catch (DbUpdateException ex)
+            {
+                _logger.LogError($"Ошибка обновления информации о бизнесе с тектом: {ex.Message}");
+                return new ServiceResult<bool>
+                {
+                    InternalServerError = true,
+                    Errors = new ServiceErrors()
+                    {
+                        Error = ex.Message
+                    }
+                };
+            }
+            catch (OperationCanceledException ex)
+            {
+                _logger.LogError($"Операция обновления информации о бизнесе была отменена с текстом: {ex.Message}");
+                return new ServiceResult<bool>
+                {
+                    InternalServerError = true,
+                    Errors = new ServiceErrors
+                    {
+                        Error = "Операция изменения была отменена"
+                    }
+                };
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Неизвестная ошибка при обновлении информации о бизнесе с тектом: {ex.Message}");
+                return new ServiceResult<bool>
+                {
+                    InternalServerError = true,
+                    Errors = new ServiceErrors()
+                    {
+                        Error = ex.Message
+                    }
+                };
+            }
+        }
     }
 }
